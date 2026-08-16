@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guilherme Lourenço Lopes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Olá! Eu sou o Guilherme</h1>
+
+        <img
+            id="foto"
+            src="assets\1744110396757.jpg"
+            alt="Foto de Guilherme Lourenço Lopes"
+        >
+
+        <h2>Sobre mim:</h2>
+
+        <p>
+            Meu nome é Guilherme Lourenço Lopes e sou estudante de engenharia de computação.
+            Tenho 22 anos, gosto de programação, área de dados e hardware
+        </p>
+
+        <p>
+            Atualmente estou aprendendo Computação Gráfica, famoso CG, e esta é a
+            minha primeira página criada na matéria.
+        </p>
+
+        <div class="botoes">
+
+            <button id="hello">
+                Hello World
+            </button>
+
+            <button id="cores">
+                Mudar cores
+            </button>
+
+            <button id="inverter">
+                Surpresa
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        const botaoHello = document.getElementById("hello");
+        botaoHello.addEventListener("click", function () {
+            alert("Hello World!");
+        });
+
+        const botaoCores = document.getElementById("cores");
+        let intervaloCores = null;
+        botaoCores.addEventListener("click", function () {
+            if (intervaloCores === null) {
+                intervaloCores = setInterval(function () {
+                    const vermelho = Math.floor(Math.random() * 256);
+                    const verde = Math.floor(Math.random() * 256);
+                    const azul = Math.floor(Math.random() * 256);
+                    document.body.style.backgroundColor =
+                        `rgb(${vermelho}, ${verde}, ${azul})`;
+
+                }, 500);
+                botaoCores.textContent = "Parar cores";
+
+            } else {
+                clearInterval(intervaloCores);
+                intervaloCores = null;
+                botaoCores.textContent = "Mudar cores";
+            }
+        });
+        
+        const botaoInverter = document.getElementById("inverter");
+        botaoInverter.addEventListener("click", function () {
+            document.body.classList.toggle("invertendo");
+        });
+
+    </script>
+
+</body>
+
+</html>
