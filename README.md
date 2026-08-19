@@ -8,6 +8,7 @@ O objetivo foi criar uma página web simples para apresentar um pouco sobre mim,
 
 - HTML
 - CSS
+- JavaScript
 
 ## Objetivo
 
