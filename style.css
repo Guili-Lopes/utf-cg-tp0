@@ -96,6 +96,14 @@ button:active {
     animation: caos 0.15s infinite;
 }
 
+.dica {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 11px;
+    color: #aaaaaa;
+    opacity: 0.5;
+}
+
 .easter-egg .container {
     animation: containerCaos 0.5s infinite alternate;
 }
