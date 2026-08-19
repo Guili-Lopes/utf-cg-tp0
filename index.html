@@ -34,6 +34,10 @@
             minha primeira página criada na matéria.
         </p>
 
+        <p class="dica">
+            Há um easter egg na tela, talvez se vc ir apertando todas as teclas aconteça algo
+        </p>
+
         <div class="botoes">
 
             <button id="hello">
@@ -84,6 +88,28 @@
         const botaoInverter = document.getElementById("inverter");
         botaoInverter.addEventListener("click", function () {
             document.body.classList.toggle("invertendo");
+        });
+
+        let easterEggAtivo = false;
+
+        document.addEventListener("keydown", function (event) {
+        
+            if (event.key.toLowerCase() === "g" && !easterEggAtivo) {
+        
+                easterEggAtivo = true;
+        
+                document.body.classList.add("easter-egg");
+        
+                setTimeout(function () {
+                    alert("VOCÊ ENCONTROU O EASTER EGG! 👀");
+                }, 500);
+        
+                setTimeout(function () {
+                    document.body.classList.remove("easter-egg");
+                    easterEggAtivo = false;
+                }, 5000);
+            }
+        
         });
 
     </script>
